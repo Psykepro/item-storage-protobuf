@@ -1,0 +1,20 @@
+syntax = "proto3";
+package item;
+option go_package = "github.com/Psykepro/item-storage-protobuf/generated/item";
+
+message Item {
+    string uuid = 1;
+    string data = 3;
+}
+
+enum Command {
+    CREATE = 0;
+    DELETE = 1;
+    GET = 2;
+    LIST = 3;
+}
+
+message Request {
+    Command command = 1;
+    optional Item item = 2;
+}
